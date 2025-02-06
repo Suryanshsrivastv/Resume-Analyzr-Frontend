@@ -1,6 +1,7 @@
 function analyzeResume() {
     const input = document.getElementById("resumeInput");
     const resultBox = document.getElementById("analysisResult");
+    const spinner = document.getElementById("spinner");
 
     if (input.files.length === 0) {
         alert("Please upload a resume file.");
@@ -12,6 +13,7 @@ function analyzeResume() {
     formData.append("resume", file);
 
     console.log("Sending request to server...");
+    spinner.style.display = "block"; 
 
     fetch("https://backend-web-service-for-analysis-of.onrender.com/api/files/uploadresume", { 
         method: "POST",
@@ -24,6 +26,7 @@ function analyzeResume() {
         
         if (data.candidates?.[0]?.parts?.[0]?.text) {
             console.log("result aaya");
+            spinner.style.display = "none";
             const analysisText = data.candidates?.[0]?.content?.parts?.[0]?.text;
             resultBox.innerHTML = `<strong>Analysis Result:</strong><br>${analysisText}`;
             resultBox.style.display = "block";
