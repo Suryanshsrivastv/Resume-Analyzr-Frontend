@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TResume - AI Resume Analyzer</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">TResume</div>
+        <span class="subtitle">An AI-Powered Resume Analyzer</span>
+    </nav>
+
+    <div class="container">
+        <h1>Analyze Your Resume</h1>
+        <div class="form-box">
+            <input type="file" id="resumeInput" accept=".pdf,.doc,.docx">
+            <button onclick="analyzeResume()">Analyze Resume</button>
+        </div>
+        <div id="analysisResult" class="result-box"></div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
